@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("https://www.latercera.com/resizer/v2/AL5DTNUQPBBJDBBNNPLQKJWREY.jpg?auth=1682a5912273bcc292cb982490c2bf0f8fbe12bb2cea35fcdf6cfb4566011454&width=1200&smart=true") no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: blur(40px);
+
+}
