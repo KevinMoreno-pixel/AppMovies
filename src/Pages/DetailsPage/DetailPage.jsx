@@ -35,8 +35,11 @@ const DetailPage = () => {
                 <CardContent>
                     <Typography gutterBottom variant="h4" component="div" sx={{ color: 'white' }}>
                         {movie.title}
+                        <Typography variant="h6" color="gray" sx={{ mb: 2 }}>
+                            {movie.genero}
+                        </Typography>
                     </Typography>
-                    <Typography variant="body1" color="gray">
+                    <Typography variant="body1" color="white" sx={{ mb: 2, fontSize: '1.1rem' }}>
                         {movie.synopsis}
                     </Typography>
                     <Button

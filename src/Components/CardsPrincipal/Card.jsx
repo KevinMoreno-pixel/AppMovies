@@ -8,8 +8,9 @@ import {
     Button
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import movies from '../../Movies.js';
 
-const MovieCard = ({ id, title, image }) => {
+const MovieCard = ({ id, image, title, genero }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -17,19 +18,20 @@ const MovieCard = ({ id, title, image }) => {
     };
 
     return (
-        <Card 
-        sx={{ 
-            maxWidth: 300, 
-            backgroundColor: 'transparent', 
-            color: 'white', 
-            border: '1px solid static', 
-            borderRadius: '10px', 
-            transition: 'all 0.6s ease-in-out',
-            '&:hover': { 
-                scale: 1.05,
-                backgroundColor: 'rgba(255, 255, 255, 0.1)' 
-                
-                } }}>
+        <Card
+            sx={{
+                maxWidth: 300,
+                backgroundColor: 'transparent',
+                color: 'white',
+                border: '1px solid static',
+                borderRadius: '10px',
+                transition: 'all 0.6s ease-in-out',
+                '&:hover': {
+                    scale: 1.05,
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)'
+
+                }
+            }}>
             <CardMedia
                 component="img"
                 alt={`Poster de ${title}`}
@@ -37,10 +39,12 @@ const MovieCard = ({ id, title, image }) => {
                 image={image}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography variant="h5" component="div">
                     {title}
                 </Typography>
-
+                <Typography variant="body2" color="red">
+                    {genero}
+                </Typography>
             </CardContent>
             <CardActions>
                 <Button

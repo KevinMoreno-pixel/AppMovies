@@ -24,7 +24,7 @@ const people = [
     },
     {
         name: 'Juan David Ramirez Alvarez',
-        role: 'Desarrolador Backend',
+        role: 'Desarrollador Backend',
         avatar: 'https://i.imgur.com/iFyjUYr.png',
         Universidad: 'Universidad de la Amazonia',
         Edad: '21 Años',
