@@ -15,7 +15,7 @@ const people = [
     {
         name: 'Kevin Andres Moreno Perez',
         role: 'Desarrollador Frontend',
-        avatar: 'https://avatars.githubusercontent.com/u/197991926?v=4',
+        avatar: 'https://i.imgur.com/1cTP17o_d.webp?maxwidth=760&fidelity=grand',
         Universidad: 'Universidad de la Amazonia',
         Edad: '22 Años',
         GitHub: 'https://github.com/KevinMoreno-pixel',
@@ -25,7 +25,7 @@ const people = [
     {
         name: 'Juan David Ramirez Alvarez',
         role: 'Desarrolador Backend',
-        avatar: 'https://i.pravatar.cc/150?img=2',
+        avatar: 'https://i.imgur.com/iFyjUYr.png',
         Universidad: 'Universidad de la Amazonia',
         Edad: '21 Años',
         GitHub: 'https://github.com/KevinMoreno-pixel',

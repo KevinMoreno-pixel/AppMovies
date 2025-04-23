@@ -20,7 +20,7 @@ const Navbar = () => {
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{ gap: '30px', width: '100%' }}>
                     {/* Logo */}
-                    <img src="./logo1.png" alt="TakeFinal" style={{ height: '60px', width: '60px' }} />
+                    <img src="./public/logo1.png" alt="TakeFinal" style={{ height: '60px', width: '60px' }} />
 
                     {/* Home */}
                     <Box
