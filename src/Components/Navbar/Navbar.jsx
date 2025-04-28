@@ -44,11 +44,11 @@ const Navbar = () => {
             onClick={toggleDrawer(false)}
         >
             <List>
-                <ListItem button component={Link} to="/" sx={{ color: 'white' }}>
+                <ListItem button component={Link} to="/app" sx={{ color: 'white' }}>
                     <HomeIcon sx={{ mr: 1 }} />
                     <ListItemText primary="Home" />
                 </ListItem>
-                <ListItem button component={Link} to="/info" sx={{ color: 'white' }}>
+                <ListItem button component={Link} to="/app/info" sx={{ color: 'white' }}>
                     <InfoIcon sx={{ mr: 1 }} />
                     <ListItemText primary="Info" />
                 </ListItem>
@@ -143,11 +143,11 @@ const Navbar = () => {
                         </>
                     ) : (
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: '30px', marginLeft: 'auto', zIndex: 1 }}>
-                            <Box component={Link} to="/" sx={linkStyles}>
+                            <Box component={Link} to="/app" sx={linkStyles}>
                                 <HomeIcon fontSize="large" />
                                 <Typography sx={{ ml: 1 }}>Home</Typography>
                             </Box>
-                            <Box component={Link} to="/info" sx={linkStyles}>
+                            <Box component={Link} to="/app/info" sx={linkStyles}>
                                 <InfoIcon fontSize="large" />
                                 <Typography sx={{ ml: 1 }}>Info</Typography>
                             </Box>

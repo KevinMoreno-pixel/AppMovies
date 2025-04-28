@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Grid, Typography } from '@mui/material';
 import MovieCard from '../../Components/CardsPrincipal/Card';
 import movies from '../../Movies';
-import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
 
@@ -15,6 +14,7 @@ const HomePage = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                padding: 3,
             }}>
             <Typography variant="h4" gutterBottom sx={{ color: 'white' }}>
                 Películas destacadas ✨

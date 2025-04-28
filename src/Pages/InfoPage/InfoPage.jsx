@@ -27,7 +27,7 @@ const people = [
         role: 'Desarrollador Backend',
         avatar: 'https://i.imgur.com/iFyjUYr.png',
         Universidad: 'Universidad de la Amazonia',
-        Edad: '21 Años',
+        Edad: '20 Años',
         GitHub: 'https://github.com/KevinMoreno-pixel',
         instagram: 'https://www.instagram.com/juan_ramirez004'
     }
@@ -35,12 +35,14 @@ const people = [
 
 const InfoPage = () => {
     return (
-        <Container sx={{ mt: 6, height: '100vh' }} >
+        <Container sx={{
+            mt: 6, MinHeight: '100vh', padding: 4
+        }} >
             <Typography variant="h4" gutterBottom sx={{ color: 'white', textAlign: 'center' }}>
                 Sobre nosotros
             </Typography>
 
-            <Grid container spacing={7} justifyContent="center">
+            <Grid container spacing={7} justifyContent="center" >
                 {people.map((person, index) => (
                     <Grid item xs={12} sm={6} md={4} key={index} >
                         <Card

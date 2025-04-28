@@ -3,7 +3,7 @@ const movies = [
         id: 1,
         title: 'Avengers: Endgame',
         genero: 'Acción',
-        image: 'https://pics.filmaffinity.com/Vengadores_Endgame-135478227-large.jpg',
+        image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0dfbbd79079049.5cb7d6792ef30.jpg',
         synopsis: 'Después de los eventos devastadores de ‘Avengers: Infinity War’, el universo está en ruinas debido a las acciones de Thanos, el Titán Loco. Con la ayuda de los aliados que quedaron, los Vengadores deben reunirse una vez más para deshacer sus acciones y restaurar el orden en el universo de una vez por todas, sin importar cuáles son las consecuencias que pueda tener.'
     },
     {

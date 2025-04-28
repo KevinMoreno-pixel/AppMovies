@@ -8,13 +8,12 @@ import {
     Button
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import movies from '../../Movies.js';
 
 const MovieCard = ({ id, image, title, genero }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/details/${id}`);
+        navigate(`/app/details/${id}`);
     };
 
     return (
