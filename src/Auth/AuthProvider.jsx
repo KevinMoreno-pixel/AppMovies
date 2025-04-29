@@ -2,13 +2,36 @@ import { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext({
     isAuthenticated: false,
+    getAccessToken: () => { },
+    saveUser: (userData) => { },
+    getRefreshToken: () => { },
 });
 
 export function AuthProvider({ children }) {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [accessToken, setAccessToken] = useState("");
+    //const [refreshToken, setRefreshToken] = useState ("");
 
-    return <AuthContext.Provider value={{ isAuthenticated }}>
+    function getAccessToken() {
+        return accessToken;
+    }
+    function getRefreshToken() {
+        const token = localStorage.getItem("Token");
+        if (token) {
+            const { refreshToken} = JSON.parse(token);
+            return refreshToken;
+        }
+    }
+    function saveUser(userData) {
+        setAccessToken(userData.body.accessToken);
+        //setRefreshToken(userData.body.refreshToken);
+
+        localStorage.setItem("Token", JSON.stringify(userData.body.refreshToken));
+        setIsAuthenticated(true);
+    }
+
+    return <AuthContext.Provider value={{ isAuthenticated, getAccessToken, saveUser, getRefreshToken }}>
         {children}
     </AuthContext.Provider>
 }

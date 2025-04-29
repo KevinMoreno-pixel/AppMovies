@@ -8,13 +8,11 @@ const App = () => {
 
   return (
     <>
-      <div className='app-background'>
-        <div className='background' />
-        <div className='content'>
-          <Navbar />
-          <Outlet />
-          <Footer />
-        </div>
+      <div className='background' />
+      <div className='content'>
+        <Navbar />
+        <Outlet />
+        <Footer />
       </div>
 
     </>

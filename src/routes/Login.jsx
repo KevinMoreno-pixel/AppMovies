@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useAuth } from "../Auth/AuthProvider";
 import { Navigate, useNavigate } from "react-router-dom";
 import { API_URL } from "../Auth/constants";
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 
 export default function Login() {
 
@@ -34,11 +36,18 @@ export default function Login() {
                 console.log("Login successful");
                 setErrorResponse("");
 
-                goTo("/");
+                const json = await response.json();
+
+                if (json.body.accessToken && json.body.refreshToken) {
+                    Auth.saveUser(json);
+                    goTo("/app");
+                }
+
+
             } else {
                 console.log("Error creating user");
-
                 const json = await response.json();
+
                 setErrorResponse(json.body.error);
             }
 
@@ -52,23 +61,35 @@ export default function Login() {
         return <Navigate to="/App" />;
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <>
 
-            <h3>Login Here</h3>
 
-            <label>Username</label>
-            <input type="text" placeholder="Email or Phone" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+            <form onSubmit={handleSubmit}>
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+                    <img src="/logo1.png" alt="Logo" style={{ width: '200px', height: 'auto' }} />
+                </div>
 
-            <label>Password</label>
-            <input type="password" placeholder="Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                <h3>Login Here</h3>
+                {!!errorResponse && ( // <-- si hay error, mostramos el Alert
+                    <Stack sx={{ width: '100%' }} spacing={2}>
+                        <Alert variant="outlined" severity="error">
+                            {errorResponse}
+                        </Alert>
+                    </Stack>
+                )}
+                <label>Username</label>
+                <input type="text" placeholder="Email or Phone" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
 
-            <button>Log In</button>
-            <Link to="/signup">
+                <label>Password</label>
+                <input type="password" placeholder="Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
 
-                <button>Sign Up</button>
+                <button>Log In</button>
+                <Link to="/signup">
 
-            </Link>
-        </form>
+                    <button>Sign Up</button>
 
+                </Link>
+            </form>
+        </>
     );
 }

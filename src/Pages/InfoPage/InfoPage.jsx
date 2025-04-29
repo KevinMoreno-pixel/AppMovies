@@ -36,18 +36,19 @@ const people = [
 const InfoPage = () => {
     return (
         <Container sx={{
-            mt: 6, MinHeight: '100vh', padding: 4
+            mt: 2, padding: 4, 
+           minHeight: '100vh',
         }} >
             <Typography variant="h4" gutterBottom sx={{ color: 'white', textAlign: 'center' }}>
                 Sobre nosotros
             </Typography>
 
-            <Grid container spacing={7} justifyContent="center" >
+            <Grid container spacing={7} justifyContent="center">
                 {people.map((person, index) => (
-                    <Grid item xs={12} sm={6} md={4} key={index} >
+                    <Grid item xs={12} sm={6} md={5} key={index} >
                         <Card
                             sx={{
-                                backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                                backgroundColor: 'rgba(62, 62, 62, 0.4)',
                                 color: 'white',
                                 height: 300,
                                 display: 'flex',

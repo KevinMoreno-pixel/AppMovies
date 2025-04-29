@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useAuth } from "../Auth/AuthProvider";
 import { Navigate, useNavigate } from "react-router-dom";
 import { API_URL } from "../Auth/constants";
-
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 export default function Signup() {
 
     const [name, setName] = useState("");
@@ -12,6 +13,7 @@ export default function Signup() {
 
     const Auth = useAuth();
     const goTo = useNavigate();
+    const navigate = useNavigate();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -52,22 +54,37 @@ export default function Signup() {
         return <Navigate to="/App" />;
     }
     return (
+        <>
 
-        <form onSubmit={handleSubmit}>
-            <h3>Sign Up</h3>
-            {!!errorResponse && <div className="errorMessage">{errorResponse}</div>}
-            <label>Name</label>
-            <input type="text" placeholder="Nombre completo" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
+            <form onSubmit={handleSubmit}>
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+                    <img src="/logo1.png" alt="Logo" style={{ width: '180px', height: 'auto' }} />
+                </div>
+                <h3>Sign Up</h3>
+                {!!errorResponse && ( // <-- si hay error, mostramos el Alert
+                    <Stack sx={{ width: '100%' }} spacing={2}>
+                        <Alert variant="outlined" severity="error">
+                            {errorResponse}
+                        </Alert>
+                    </Stack>
+                )}
+                <label>Name</label>
+                <input type="text" placeholder="Nombre completo" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
 
-            <label>Username</label>
-            <input type="text" placeholder="Nombre de usuario" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+                <label>Username</label>
+                <input type="text" placeholder="Nombre de usuario" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
 
-            <label>Password</label>
-            <input type="password" placeholder="Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                <label>Password</label>
+                <input type="password" placeholder="Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
 
-            <button>Confirmar</button>
-        </form>
+                <button>Confirmar</button>
+                <button
+                    onClick={() => navigate('/')}
+                >
+                    Volver
+                </button>
 
-
+            </form>
+        </>
     );
 }
